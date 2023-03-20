@@ -1,8 +1,6 @@
 import React from 'react';
 import PlaceCard from '../../components/place-card/place-card';
 
-// const CARD_COUNT: number = 5;
-
 type MainScreenProps = {
   placesCount: number;
 }

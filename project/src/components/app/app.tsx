@@ -16,7 +16,7 @@ export default function App({offers}: AppScreenProps): JSX.Element {
       <Routes>
         <Route path={AppRoute.Main} element={<Main offers={offers} />} />
         <Route path={AppRoute.Login} element={<Login />} />
-        <Route path={AppRoute.Room} element={<Room />} />
+        <Route path={AppRoute.Room} element={<Room offers={offers} />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
     </BrowserRouter>

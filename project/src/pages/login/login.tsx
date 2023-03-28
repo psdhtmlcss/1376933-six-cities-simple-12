@@ -1,4 +1,4 @@
-function Login() {
+export default function Login() {
   return (
     <div className="page page--gray page--login">
       <div style={{ display: 'none' }}>
@@ -79,5 +79,3 @@ function Login() {
     </div>
   );
 }
-
-export default Login;

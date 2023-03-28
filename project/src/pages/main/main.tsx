@@ -11,8 +11,7 @@ type MainScreenProps = {
   offers: Offer[];
 }
 
-
-function Main({offers}: MainScreenProps):JSX.Element {
+export default function Main({offers}: MainScreenProps):JSX.Element {
   return (
     <React.Fragment>
       <HiddenElements />
@@ -39,5 +38,3 @@ function Main({offers}: MainScreenProps):JSX.Element {
     </React.Fragment>
   );
 }
-
-export default Main;

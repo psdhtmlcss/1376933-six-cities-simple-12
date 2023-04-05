@@ -4,22 +4,21 @@ import Room from '../../pages/room/room';
 import Page404 from '../../pages/page-404/page-404';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { AppRoute } from '../../const';
+import { Offer } from '../../types/offer';
 
 type AppScreenProps = {
-  placesCount: number;
+  offers: Offer[];
 }
 
-function App({placesCount}: AppScreenProps): JSX.Element {
+export default function App({offers}: AppScreenProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={AppRoute.Main} element={<Main placesCount={placesCount} />} />
+        <Route path={AppRoute.Main} element={<Main offers={offers} />} />
         <Route path={AppRoute.Login} element={<Login />} />
-        <Route path={AppRoute.Room} element={<Room />} />
+        <Route path={AppRoute.Room} element={<Room offers={offers} />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
     </BrowserRouter>
   );
 }
-
-export default App;

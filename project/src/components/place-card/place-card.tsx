@@ -22,7 +22,7 @@ export default function PlaceCard(props: PlaceCardScreenProps): JSX.Element {
       className="cities__card place-card"
     >
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <Link to={AppRoute.Room}>
+        <Link to={`offer/${id}`}>
           <img className="place-card__image" src={previewImage} width="260" height="200" alt={title} />
         </Link>
       </div>
@@ -40,7 +40,7 @@ export default function PlaceCard(props: PlaceCardScreenProps): JSX.Element {
           </div>
         </div>
         <h2 className="place-card__name">
-          <Link to={AppRoute.Room}>{title}</Link>
+          <Link to={`offer/${id}`}>{title}</Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>

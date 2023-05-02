@@ -1,14 +1,17 @@
+import  {useParams} from 'react-router-dom';
 import HiddenElements from '../../components/hidden-elements/hidden-elements';
 import Header from '../../components/header/header';
 import ReviewsForm from '../../components/reviews-form/reviews-form';
-import { Offer } from '../../types/offer';
+import { Offer as OfferType } from '../../types/offer';
 
-type RoomScreenProps = {
-  offers: Offer[];
+type OfferScreenProps = {
+  offers: OfferType[];
 }
 
-export default function Room({offers}: RoomScreenProps):JSX.Element {
-  // console.log(offers)
+export default function Offer({offers}: OfferScreenProps):JSX.Element {
+  console.log(offers);
+  const params = useParams();
+  console.log('params', params);
   // const {} = offers;
   return (
     <div className="page">

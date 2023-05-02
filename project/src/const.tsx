@@ -6,7 +6,7 @@ export enum CommentLength {
 export enum AppRoute {
   Main = '/',
   Login = '/login',
-  Room = '/offer',
+  Offer = '/offer/:id',
 }
 
 export const ratingRates = [

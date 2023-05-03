@@ -1,4 +1,5 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import {HelmetProvider} from 'react-helmet-async';
 import Main from '../../pages/main/main';
 import Login from '../../pages/login/login';
 import Offer from '../../pages/offer/offer';
@@ -14,14 +15,16 @@ type AppScreenProps = {
 export default function App({offers}: AppScreenProps): JSX.Element {
 
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Routes>
-        <Route path={AppRoute.Main} element={<Main offers={offers} />} />
-        <Route path={AppRoute.Login} element={<Login />} />
-        <Route path={AppRoute.Offer} element={<Offer offers={offers} />} />
-        <Route path="*" element={<Page404 />} />
-      </Routes>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Routes>
+          <Route path={AppRoute.Main} element={<Main offers={offers} />} />
+          <Route path={AppRoute.Login} element={<Login />} />
+          <Route path={AppRoute.Offer} element={<Offer offers={offers} />} />
+          <Route path="*" element={<Page404 />} />
+        </Routes>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }

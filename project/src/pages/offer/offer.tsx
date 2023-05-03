@@ -1,4 +1,5 @@
 import  {useParams} from 'react-router-dom';
+import {Helmet} from 'react-helmet-async';
 import HiddenElements from '../../components/hidden-elements/hidden-elements';
 import Header from '../../components/header/header';
 import ReviewsForm from '../../components/reviews-form/reviews-form';
@@ -12,9 +13,13 @@ export default function Offer({offers}: OfferScreenProps):JSX.Element {
   console.log(offers);
   const params = useParams();
   console.log('params', params);
-  // const {} = offers;
+  const offer: OfferType | undefined = offers.find(item => item.id === Number(params.id));
+  console.log('offer', offer);
   return (
     <div className="page">
+      <Helmet>
+        <title>Страница предложения</title>
+      </Helmet>
       <HiddenElements />
       <Header />
       <main className="page__main page__main--property">

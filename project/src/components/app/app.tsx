@@ -7,13 +7,15 @@ import Page404 from '../../pages/page-404/page-404';
 import { AppRoute } from '../../const';
 import ScrollToTop from '../scrollToTop/scrollToTop';
 import { Offer as OfferType } from '../../types/offer';
+import { Review } from '../../types/review';
 
 type AppScreenProps = {
   offers: OfferType[];
+  reviews: Review[];
 }
 
-export default function App({offers}: AppScreenProps): JSX.Element {
-
+export default function App({offers, reviews}: AppScreenProps): JSX.Element {
+  console.log(reviews);
   return (
     <HelmetProvider>
       <BrowserRouter>

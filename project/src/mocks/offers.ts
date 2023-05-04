@@ -23,7 +23,7 @@ export const offers: Offer[] = [
     },
     id: 1,
     images: [
-      'img/room.jpg'
+      'img/room.jpg', 'img/apartment-01.jpg', 'img/apartment-02.jpg', 'img/apartment-03.jpg', 'img/studio-01.jpg', 'img/room.jpg'
     ],
     isPremium: false,
     location: {
@@ -60,7 +60,7 @@ export const offers: Offer[] = [
     },
     id: 2,
     images: [
-      'img/2.png'
+      'img/apartment-01.jpg', 'img/room.jpg', 'img/apartment-02.jpg', 'img/apartment-03.jpg', 'img/studio-01.jpg', 'img/room.jpg'
     ],
     isPremium: true,
     location: {
@@ -69,7 +69,7 @@ export const offers: Offer[] = [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: 'img/2.png',
+    previewImage: 'img/apartment-02.jpg',
     price: 120,
     rating: 5,
     title: 'Beautiful & luxurious studio at great location',
@@ -90,14 +90,14 @@ export const offers: Offer[] = [
       'Heating'
     ],
     host: {
-      avatarUrl: 'img/3.png',
+      avatarUrl: 'img/apartment-03.jpg',
       id: 5,
       isPro: true,
       name: 'John'
     },
     id: 3,
     images: [
-      'img/3.png'
+      'img/apartment-02.jpg', 'img/room.jpg', 'img/apartment-01.jpg', 'img/apartment-03.jpg', 'img/studio-01.jpg', 'img/room.jpg'
     ],
     isPremium: true,
     location: {
@@ -106,7 +106,7 @@ export const offers: Offer[] = [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: 'img/2.png',
+    previewImage: 'img/apartment-01.jpg',
     price: 120,
     rating: 5,
     title: 'Beautiful & luxurious studio at great location',
@@ -134,7 +134,7 @@ export const offers: Offer[] = [
     },
     id: 4,
     images: [
-      'img/3.png'
+      'img/apartment-02.jpg', 'img/room.jpg', 'img/apartment-01.jpg', 'img/apartment-03.jpg', 'img/studio-01.jpg'
     ],
     isPremium: true,
     location: {
@@ -143,7 +143,7 @@ export const offers: Offer[] = [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: 'img/3.png',
+    previewImage: 'img/studio-01.jpg',
     price: 120,
     rating: 5,
     title: 'Beautiful & luxurious studio at great location',

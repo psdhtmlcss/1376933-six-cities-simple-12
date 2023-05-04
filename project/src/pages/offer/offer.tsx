@@ -35,12 +35,10 @@ export default function Offer({offers}: OfferScreenProps):JSX.Element {
             </div>
             <div className="property__container container">
               <div className="property__wrapper">
-                <div className="property__mark">
-                  <span>Premium</span>
-                </div>
+                { offer.isPremium ? <div className="property__mark"><span>Premium</span></div> : <></> }
                 <div className="property__name-wrapper">
                   <h1 className="property__name">
-                    Beautiful &amp; luxurious studio at great location
+                    {offer.title}
                   </h1>
                 </div>
                 <div className="property__rating rating">

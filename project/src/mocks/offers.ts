@@ -71,7 +71,7 @@ export const offers: Offer[] = [
     maxAdults: 4,
     previewImage: 'img/apartment-02.jpg',
     price: 120,
-    rating: 5,
+    rating: 3.2,
     title: 'Beautiful & luxurious',
     type: 'apartment'
   },
@@ -108,7 +108,7 @@ export const offers: Offer[] = [
     maxAdults: 4,
     previewImage: 'img/apartment-01.jpg',
     price: 120,
-    rating: 5,
+    rating: 4.1,
     title: 'asdfasdf',
     type: 'apartment'
   },
@@ -145,7 +145,7 @@ export const offers: Offer[] = [
     maxAdults: 4,
     previewImage: 'img/studio-01.jpg',
     price: 120,
-    rating: 5,
+    rating: 1.8,
     title: '341241234',
     type: 'apartment'
   }

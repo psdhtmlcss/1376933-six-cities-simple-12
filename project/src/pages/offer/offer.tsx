@@ -4,6 +4,7 @@ import HiddenElements from '../../components/hidden-elements/hidden-elements';
 import Header from '../../components/header/header';
 import ReviewsForm from '../../components/reviews-form/reviews-form';
 import PropertyGallery from '../../components/property-gallery/property-gallery';
+import PropertyRating from '../../components/property-rating/property-rating';
 import Page404 from '../page-404/page-404';
 import { Offer as OfferType } from '../../types/offer';
 
@@ -19,6 +20,9 @@ export default function Offer({offers}: OfferScreenProps):JSX.Element {
   console.log('offer', offer);
 
   if (offer) {
+    const calcRating = (rating: number): number => {
+      return Math.round(rating * 100 / 5);
+    };
     return (
       <div className="page">
         <Helmet>
@@ -35,19 +39,13 @@ export default function Offer({offers}: OfferScreenProps):JSX.Element {
             </div>
             <div className="property__container container">
               <div className="property__wrapper">
-                { offer.isPremium ? <div className="property__mark"><span>Premium</span></div> : <></> }
+                { offer.isPremium ? <div className="property__mark"><span>Premium</span></div> : null }
                 <div className="property__name-wrapper">
                   <h1 className="property__name">
                     {offer.title}
                   </h1>
                 </div>
-                <div className="property__rating rating">
-                  <div className="property__stars rating__stars">
-                    <span style={{ width: '80%' }} />
-                    <span className="visually-hidden">Rating</span>
-                  </div>
-                  <span className="property__rating-value rating__value">4.8</span>
-                </div>
+                <PropertyRating rating={offer.rating} />
                 <ul className="property__features">
                   <li className="property__feature property__feature--entire">
                     Apartment

@@ -9,8 +9,8 @@ export default function PropertyGallery({images}: PropertyGalleryScreenProps):JS
   return (
     <React.Fragment>
         { 
-          images.map((image) => (
-            <div className="property__image-wrapper">
+          images.map((image, index) => (
+            <div className="property__image-wrapper" key={index}>
               <img
                 className="property__image"
                 src={image}

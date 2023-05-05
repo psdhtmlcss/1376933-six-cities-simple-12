@@ -2,7 +2,7 @@ import { Offer } from '../types/offer';
 
 export const offers: Offer[] = [
   {
-    bedrooms: 3,
+    bedrooms: 1,
     city: {
       location: {
         latitude: 52.370216,
@@ -31,15 +31,15 @@ export const offers: Offer[] = [
       longitude: 4.673877537499948,
       zoom: 8
     },
-    maxAdults: 4,
+    maxAdults: 1,
     previewImage: 'img/room.jpg',
-    price: 120,
+    price: 12000,
     rating: 4.8,
     title: 'Beautiful & luxurious studio at great location',
     type: 'apartment'
   },
   {
-    bedrooms: 1,
+    bedrooms: 9,
     city: {
       location: {
         latitude: 52.370216,
@@ -68,9 +68,9 @@ export const offers: Offer[] = [
       longitude: 4.673877537499948,
       zoom: 8
     },
-    maxAdults: 4,
+    maxAdults: 49,
     previewImage: 'img/apartment-02.jpg',
-    price: 120,
+    price: 0,
     rating: 3.2,
     title: 'Beautiful & luxurious',
     type: 'apartment'
@@ -105,9 +105,9 @@ export const offers: Offer[] = [
       longitude: 4.673877537499948,
       zoom: 8
     },
-    maxAdults: 4,
+    maxAdults: 45,
     previewImage: 'img/apartment-01.jpg',
-    price: 120,
+    price: 1000,
     rating: 4.1,
     title: 'asdfasdf',
     type: 'apartment'

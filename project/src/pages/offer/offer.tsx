@@ -5,6 +5,7 @@ import Header from '../../components/header/header';
 import ReviewsForm from '../../components/reviews-form/reviews-form';
 import PropertyGallery from '../../components/property-gallery/property-gallery';
 import PropertyRating from '../../components/property-rating/property-rating';
+import PropertyGoods from 'components/property-goods/property-goods';
 import Page404 from '../page-404/page-404';
 import { Offer as OfferType } from '../../types/offer';
 
@@ -20,13 +21,11 @@ export default function Offer({offers}: OfferScreenProps):JSX.Element {
   console.log('offer', offer);
 
   if (offer) {
-    const calcRating = (rating: number): number => {
-      return Math.round(rating * 100 / 5);
-    };
+    const {title, isPremium, rating, images, type, bedrooms, maxAdults, price, goods} = offer;
     return (
       <div className="page">
         <Helmet>
-          <title>{offer.title}</title>
+          <title>{title}</title>
         </Helmet>
         <HiddenElements />
         <Header />
@@ -34,47 +33,36 @@ export default function Offer({offers}: OfferScreenProps):JSX.Element {
           <section className="property">
             <div className="property__gallery-container container">
               <div className="property__gallery">
-                <PropertyGallery images={offer.images} />
+                <PropertyGallery images={images} />
               </div>
             </div>
             <div className="property__container container">
               <div className="property__wrapper">
-                { offer.isPremium ? <div className="property__mark"><span>Premium</span></div> : null }
+                { isPremium ? <div className="property__mark"><span>Premium</span></div> : null }
                 <div className="property__name-wrapper">
                   <h1 className="property__name">
-                    {offer.title}
+                    {title}
                   </h1>
                 </div>
-                <PropertyRating rating={offer.rating} />
+                <PropertyRating rating={rating} />
                 <ul className="property__features">
                   <li className="property__feature property__feature--entire">
-                    Apartment
+                    {type}
                   </li>
                   <li className="property__feature property__feature--bedrooms">
-                    3 Bedrooms
+                    {bedrooms} Bedrooms
                   </li>
                   <li className="property__feature property__feature--adults">
-                    Max 4 adults
+                    Max {maxAdults} adults
                   </li>
                 </ul>
                 <div className="property__price">
-                  <b className="property__price-value">€120</b>
+                  <b className="property__price-value">€{price}</b>
                   <span className="property__price-text">&nbsp;night</span>
                 </div>
                 <div className="property__inside">
                   <h2 className="property__inside-title">What&apos;s inside</h2>
-                  <ul className="property__inside-list">
-                    <li className="property__inside-item">Wi-Fi</li>
-                    <li className="property__inside-item">Washing machine</li>
-                    <li className="property__inside-item">Towels</li>
-                    <li className="property__inside-item">Heating</li>
-                    <li className="property__inside-item">Coffee machine</li>
-                    <li className="property__inside-item">Baby seat</li>
-                    <li className="property__inside-item">Kitchen</li>
-                    <li className="property__inside-item">Dishwasher</li>
-                    <li className="property__inside-item">Cabel TV</li>
-                    <li className="property__inside-item">Fridge</li>
-                  </ul>
+                  <PropertyGoods goods={goods} />
                 </div>
                 <div className="property__host">
                   <h2 className="property__host-title">Meet the host</h2>

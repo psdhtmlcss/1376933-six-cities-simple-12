@@ -1,4 +1,5 @@
 import React from 'react';
+import {Helmet} from 'react-helmet-async';
 import HiddenElements from '../../components/hidden-elements/hidden-elements';
 import Header from '../../components/header/header';
 import Locations from '../../components/locations/locations';
@@ -14,6 +15,9 @@ type MainScreenProps = {
 export default function Main({offers}: MainScreenProps):JSX.Element {
   return (
     <React.Fragment>
+      <Helmet>
+        <title>Главная страница</title>
+       </Helmet>
       <HiddenElements />
       <Header />
       <main className="page__main page__main--index">

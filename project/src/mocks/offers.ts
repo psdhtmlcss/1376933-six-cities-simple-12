@@ -16,7 +16,7 @@ export const offers: Offer[] = [
       'Heating'
     ],
     host: {
-      avatarUrl: 'img/room.jpg',
+      avatarUrl: 'img/avatar-max.jpg',
       id: 3,
       isPro: true,
       name: 'Angelina'
@@ -53,7 +53,7 @@ export const offers: Offer[] = [
       'Heating'
     ],
     host: {
-      avatarUrl: 'img/2.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       id: 4,
       isPro: true,
       name: 'John'
@@ -90,7 +90,7 @@ export const offers: Offer[] = [
       'Heating'
     ],
     host: {
-      avatarUrl: 'img/apartment-03.jpg',
+      avatarUrl: 'img/avatar-max.jpg',
       id: 5,
       isPro: true,
       name: 'John'
@@ -127,7 +127,7 @@ export const offers: Offer[] = [
       'Heating'
     ],
     host: {
-      avatarUrl: 'img/4.png',
+      avatarUrl: 'img/avatar-max.jpg',
       id: 6,
       isPro: true,
       name: 'John'

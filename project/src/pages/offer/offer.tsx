@@ -1,11 +1,12 @@
 import {useParams} from 'react-router-dom';
 import {Helmet} from 'react-helmet-async';
-import HiddenElements from '../../components/hidden-elements/hidden-elements';
-import Header from '../../components/header/header';
-import ReviewsForm from '../../components/reviews-form/reviews-form';
-import PropertyGallery from '../../components/property-gallery/property-gallery';
-import PropertyRating from '../../components/property-rating/property-rating';
+import HiddenElements from 'components/hidden-elements/hidden-elements';
+import Header from 'components/header/header';
+import ReviewsForm from 'components/reviews-form/reviews-form';
+import PropertyGallery from 'components/property-gallery/property-gallery';
+import PropertyRating from 'components/property-rating/property-rating';
 import PropertyGoods from 'components/property-goods/property-goods';
+import PropertyHost from 'components/property-host/property-host';
 import Page404 from '../page-404/page-404';
 import { Offer as OfferType } from '../../types/offer';
 
@@ -21,7 +22,7 @@ export default function Offer({offers}: OfferScreenProps):JSX.Element {
   console.log('offer', offer);
 
   if (offer) {
-    const {title, isPremium, rating, images, type, bedrooms, maxAdults, price, goods} = offer;
+    const {title, isPremium, rating, images, type, bedrooms, maxAdults, price, goods, description, host} = offer;
     return (
       <div className="page">
         <Helmet>
@@ -64,34 +65,7 @@ export default function Offer({offers}: OfferScreenProps):JSX.Element {
                   <h2 className="property__inside-title">What&apos;s inside</h2>
                   <PropertyGoods goods={goods} />
                 </div>
-                <div className="property__host">
-                  <h2 className="property__host-title">Meet the host</h2>
-                  <div className="property__host-user user">
-                    <div className="property__avatar-wrapper property__avatar-wrapper--pro user__avatar-wrapper">
-                      <img
-                        className="property__avatar user__avatar"
-                        src="img/avatar-angelina.jpg"
-                        width={74}
-                        height={74}
-                        alt="Host avatar"
-                      />
-                    </div>
-                    <span className="property__user-name">Angelina</span>
-                    <span className="property__user-status">Pro</span>
-                  </div>
-                  <div className="property__description">
-                    <p className="property__text">
-                      A quiet cozy and picturesque that hides behind a a river by the
-                      unique lightness of Amsterdam. The building is green and from
-                      18th century.
-                    </p>
-                    <p className="property__text">
-                      An independent House, strategically located between Rembrand
-                      Square and National Opera, but where the bustle of the city
-                      comes to rest in this alley flowery and colorful.
-                    </p>
-                  </div>
-                </div>
+                <PropertyHost host={host} description={description} />
                 <section className="property__reviews reviews">
                   <h2 className="reviews__title">
                     Reviews · <span className="reviews__amount">1</span>

@@ -17,7 +17,7 @@ export default function Main({offers}: MainScreenProps):JSX.Element {
     <React.Fragment>
       <Helmet>
         <title>Главная страница</title>
-       </Helmet>
+      </Helmet>
       <HiddenElements />
       <Header />
       <main className="page__main page__main--index">

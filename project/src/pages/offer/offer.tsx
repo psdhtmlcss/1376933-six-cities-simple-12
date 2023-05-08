@@ -2,21 +2,23 @@ import {useParams} from 'react-router-dom';
 import {Helmet} from 'react-helmet-async';
 import HiddenElements from 'components/hidden-elements/hidden-elements';
 import Header from 'components/header/header';
-import ReviewsForm from 'components/reviews-form/reviews-form';
+import ReviewsList from 'components/reviews-list/reviews-list';
 import PropertyGallery from 'components/property-gallery/property-gallery';
 import PropertyRating from 'components/property-rating/property-rating';
 import PropertyGoods from 'components/property-goods/property-goods';
 import PropertyHost from 'components/property-host/property-host';
 import Page404 from '../page-404/page-404';
 import { Offer as OfferType } from '../../types/offer';
+import { Review } from 'types/review';
 
 type OfferScreenProps = {
   offers: OfferType[];
+  reviews: Review[];
 }
 
-export default function Offer({offers}: OfferScreenProps):JSX.Element {
+export default function Offer({offers, reviews}: OfferScreenProps):JSX.Element {
   const params = useParams();
-  const offer: OfferType | undefined = offers.find(item => item.id === Number(params.id));
+  const offer: OfferType | undefined = offers.find((item) => item.id === Number(params.id));
 
   if (offer) {
     const {title, isPremium, rating, images, type, bedrooms, maxAdults, price, goods, description, host} = offer;
@@ -63,44 +65,7 @@ export default function Offer({offers}: OfferScreenProps):JSX.Element {
                   <PropertyGoods goods={goods} />
                 </div>
                 <PropertyHost host={host} description={description} />
-                <section className="property__reviews reviews">
-                  <h2 className="reviews__title">
-                    Reviews · <span className="reviews__amount">1</span>
-                  </h2>
-                  <ul className="reviews__list">
-                    <li className="reviews__item">
-                      <div className="reviews__user user">
-                        <div className="reviews__avatar-wrapper user__avatar-wrapper">
-                          <img
-                            className="reviews__avatar user__avatar"
-                            src="img/avatar-max.jpg"
-                            width={54}
-                            height={54}
-                            alt="Reviews avatar"
-                          />
-                        </div>
-                        <span className="reviews__user-name">Max</span>
-                      </div>
-                      <div className="reviews__info">
-                        <div className="reviews__rating rating">
-                          <div className="reviews__stars rating__stars">
-                            <span style={{ width: '80%' }} />
-                            <span className="visually-hidden">Rating</span>
-                          </div>
-                        </div>
-                        <p className="reviews__text">
-                          A quiet cozy and picturesque that hides behind a a river by
-                          the unique lightness of Amsterdam. The building is green and
-                          from 18th century.
-                        </p>
-                        <time className="reviews__time" dateTime="2019-04-24">
-                          April 2019
-                        </time>
-                      </div>
-                    </li>
-                  </ul>
-                  <ReviewsForm />
-                </section>
+                <ReviewsList reviews={reviews} />
               </div>
             </div>
             <section className="property__map map" />
@@ -218,5 +183,5 @@ export default function Offer({offers}: OfferScreenProps):JSX.Element {
   return (
     <Page404 />
   );
-  
 }
+

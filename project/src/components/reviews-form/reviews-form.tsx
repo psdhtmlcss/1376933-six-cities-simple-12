@@ -1,12 +1,12 @@
 import { ChangeEvent, useState, Fragment } from 'react';
-import { CommentLength, ratingRates } from '../../const';
+import { CommentLength, ratingRates } from 'const';
 
 type FormStateType = {
   rating: '';
   review: '';
 };
 
-export default function ReviewsForm() {
+export default function ReviewsForm(): JSX.Element {
   const [formData, setFormData] = useState<FormStateType>({ rating: '', review: '' });
   const fieldChangeHandler = (evt: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
     const {name, value} = evt.target;

@@ -1,11 +1,10 @@
+import { calcRatingStarsWidth } from 'utils';
+
 type PropertyRatingScreenProps = {
   rating: number;
 };
 
 export default function PropertyRating({rating}: PropertyRatingScreenProps): JSX.Element {
-  const calcRatingStarsWidth = (rating: number) => {
-    return `${Math.round((rating * 100) / 5)}%`;
-  };
   return (
     <div className="property__rating rating">
       <div className="property__stars rating__stars">
@@ -16,3 +15,4 @@ export default function PropertyRating({rating}: PropertyRatingScreenProps): JSX
     </div>
   );
 }
+

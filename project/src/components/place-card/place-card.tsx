@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Offer } from '../../types/offer';
-import { AppRoute } from '../../const';
 
 type PlaceCardScreenProps = {
   offer: Offer;
@@ -15,7 +14,6 @@ export default function PlaceCard(props: PlaceCardScreenProps): JSX.Element {
   const {offer} = props;
   const {previewImage, price, rating, title, type, id} = offer;
   const [activeCard, setStateCard] = useState<CardStateType>({id: null});
-  console.log(activeCard);
 
   return (
     <article

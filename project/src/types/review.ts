@@ -12,3 +12,4 @@ export type Review = {
   rating: number;
   user: User;
 };
+

@@ -22,7 +22,7 @@ export default function App({offers, reviews}: AppScreenProps): JSX.Element {
         <Routes>
           <Route path={AppRoute.Main} element={<Main offers={offers} />} />
           <Route path={AppRoute.Login} element={<Login />} />
-          <Route path={AppRoute.Offer} element={<Offer offers={offers} />} />
+          <Route path={AppRoute.Offer} element={<Offer offers={offers} reviews={reviews} />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
       </BrowserRouter>

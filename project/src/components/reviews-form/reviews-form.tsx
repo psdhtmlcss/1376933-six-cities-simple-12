@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useState, Fragment } from 'react';
 import { CommentLength, ratingRates } from '../../const';
 
 type FormStateType = {
@@ -24,7 +24,7 @@ export default function ReviewsForm() {
       <div className="reviews__rating-form form__rating">
         {
           ratingRates.map(({title, value}) => (
-            <>
+            <Fragment key={title}>
               <input
                 className="form__rating-input visually-hidden"
                 name="rating"
@@ -42,7 +42,7 @@ export default function ReviewsForm() {
                   <use xlinkHref="#icon-star" />
                 </svg>
               </label>
-            </>
+            </Fragment>
           ))
         }
       </div>

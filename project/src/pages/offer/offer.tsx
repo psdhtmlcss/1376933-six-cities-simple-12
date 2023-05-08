@@ -15,11 +15,8 @@ type OfferScreenProps = {
 }
 
 export default function Offer({offers}: OfferScreenProps):JSX.Element {
-  console.log(offers);
   const params = useParams();
-  console.log('params', params);
   const offer: OfferType | undefined = offers.find(item => item.id === Number(params.id));
-  console.log('offer', offer);
 
   if (offer) {
     const {title, isPremium, rating, images, type, bedrooms, maxAdults, price, goods, description, host} = offer;

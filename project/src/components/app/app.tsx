@@ -15,7 +15,6 @@ type AppScreenProps = {
 }
 
 export default function App({offers, reviews}: AppScreenProps): JSX.Element {
-  console.log(reviews);
   return (
     <HelmetProvider>
       <BrowserRouter>

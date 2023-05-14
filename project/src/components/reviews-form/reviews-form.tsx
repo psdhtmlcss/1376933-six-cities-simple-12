@@ -10,6 +10,8 @@ export default function ReviewsForm(): JSX.Element {
   const [formData, setFormData] = useState<FormStateType>({ rating: '', review: '' });
   const fieldChangeHandler = (evt: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
     const {name, value} = evt.target;
+    console.log(formData);
+
     setFormData({...formData, [name]: value});
   };
   return (

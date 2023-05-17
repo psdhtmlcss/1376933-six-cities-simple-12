@@ -6,13 +6,14 @@ import Locations from '../../components/locations/locations';
 import PlacesSort from '../../components/places-sort/places-sort';
 import PlacesList from '../../components/places-list/places-list';
 import Map from '../../components/map/map';
-import { Offer } from '../../types/offer';
+import { Offer, City } from '../../types/offer';
 
 type MainScreenProps = {
   offers: Offer[];
+  city: City;
 }
 
-export default function Main({offers}: MainScreenProps):JSX.Element {
+export default function Main({offers, city}: MainScreenProps):JSX.Element {
   return (
     <React.Fragment>
       <Helmet>
@@ -34,7 +35,7 @@ export default function Main({offers}: MainScreenProps):JSX.Element {
               <PlacesList offers={offers} />
             </section>
             <div className="cities__right-section">
-              <Map />
+              <Map offers={offers} city={city} />
             </div>
           </div>
         </div>

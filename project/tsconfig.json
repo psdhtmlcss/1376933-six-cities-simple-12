@@ -11,6 +11,9 @@
       ],
       "types": [
         "./types"
+      ],
+      "hooks": [
+        "./hooks"
       ]
     },
     "target": "es2020",

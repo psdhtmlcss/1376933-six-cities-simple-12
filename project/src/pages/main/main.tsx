@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Helmet} from 'react-helmet-async';
 import HiddenElements from '../../components/hidden-elements/hidden-elements';
 import Header from '../../components/header/header';
@@ -14,6 +14,8 @@ type MainScreenProps = {
 }
 
 export default function Main({offers, city}: MainScreenProps):JSX.Element {
+  const [activeOffer, setActiveOffer] = useState<null | Offer>(null);
+
   return (
     <React.Fragment>
       <Helmet>
@@ -32,10 +34,10 @@ export default function Main({offers, city}: MainScreenProps):JSX.Element {
               <h2 className="visually-hidden">Places</h2>
               <b className="places__found">{offers.length} places to stay in Amsterdam</b>
               <PlacesSort />
-              <PlacesList offers={offers} />
+              <PlacesList offers={offers} setActiveOffer={setActiveOffer}/>
             </section>
             <div className="cities__right-section">
-              <Map offers={offers} city={city} />
+              <Map offers={offers} city={city} activeOffer={activeOffer}/>
             </div>
           </div>
         </div>

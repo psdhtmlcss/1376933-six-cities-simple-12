@@ -1,23 +1,26 @@
-import { useState } from 'react';
+// import {useState} from 'react';
 import { Link } from 'react-router-dom';
 import { Offer } from '../../types/offer';
 
 type PlaceCardScreenProps = {
   offer: Offer;
+  setActiveOffer: (offer: Offer | null) => void;
 };
 
-type CardStateType = {
-  id: null | number;
-};
+// type StateCard = {
+//   id: null | number;
+// };
 
 export default function PlaceCard(props: PlaceCardScreenProps): JSX.Element {
-  const {offer} = props;
+  const {offer, setActiveOffer} = props;
   const {previewImage, price, rating, title, type, id} = offer;
-  const [activeCard, setStateCard] = useState<CardStateType>({id: null});
+  // const [activeCard, setActiveCard] = useState<StateCard>({id: null});
+
 
   return (
     <article
-      onMouseEnter={() => setStateCard({id: id})}
+      onMouseEnter={() => setActiveOffer(offer)}
+      onMouseLeave={() => setActiveOffer(null)}
       className="cities__card place-card"
     >
       <div className="cities__image-wrapper place-card__image-wrapper">
